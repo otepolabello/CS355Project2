@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>Trip Flight</title>
+</head>
+<body>
+<h1>Trip Flight</h1>
+<a href="/trip_flight/add">Add New Trip Flight</a> <br />
+
+<br />
+
+<table border="1">
+    <tr><th>Country Name</th><th>Flight ID</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/trip_flight/?country_name=<%= result[i].country_name%>"><%= result[i].country_name%></a></td>
+        <td><%= result[i].flight_id%>
+
+        <td><form action="/trip_flight/delete/">
+                <input type="hidden" name="country_name" id="country_name" value="<%= result[i].country_name %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>

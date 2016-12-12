@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Travel Agencies</title>
+</head>
+<body>
+<h1>Client Information</h1>
+<a href="/client/add">Add New Client Information</a> <br />
+
+<br />
+
+<table border="1">
+    <tr><th>Email</th><th>Client Name</th><th>Address</th><th>Action</th></tr>
+    <% for(var i=0; result.length > i; i++ ) { %>
+    <tr>
+        <td><a href="/client/?email=<%= result[i].email%>"><%= result[i].email%></a></td>
+        <td><%= result[i].first_name + ' ' + result[i].last_name%>
+        <td><%= result[i].address%>
+
+        <td><form action="/travel/delete/">
+                <input type="hidden" name="email" id="email" value="<%= result[i].email %>" />
+                <input type="submit" value="Delete"/>
+            </form>
+        </td>
+    </tr>
+    <% } %>
+</table>
+</body>
+
+</html>
