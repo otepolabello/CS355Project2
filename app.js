@@ -16,12 +16,7 @@ var payment = require('./routes/payment_routes');
 var tripflight = require('./routes/tripflight_routes');
 var travelclient = require('./routes/travelclient_routes');
 var travelairline = require('./routes/travelairline_routes');
-// var school = require('./routes/school_routes');
-// var account = require('./routes/account_routes');
-// var resume = require('./routes/resume_routes');
-// var company = require('./routes/company_routes');
-// var address = require ('./routes/address_routes');
-// var skill = require('./routes/skill_routes');
+
 
 
 var app = express();
@@ -50,12 +45,7 @@ app.use('/payment', payment);
 app.use('/tripflight', tripflight);
 app.use('/travelclient', travelclient);
 app.use('/travelairline', travelairline);
-// app.use('/school', school);
-// app.use('/account', account);
-// app.use('/resume', resume);
-// app.use('/company', company);
-// app.use('/address', address);
-// app.use('/skill', skill);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
