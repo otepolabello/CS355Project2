@@ -23,10 +23,12 @@ exports.getById = function(country_name, callback) {
 
 exports.insert = function(params, callback) {
     var query = 'INSERT INTO trip_flight (country_name, flight_id) VALUES (?, ?)';
+    // var query = 'INSERT INTO trip_flight (country_name) VALUES (?)';
 
     // the question marks in the sql query above will be replaced by the values of the
     // the data in queryData
     var queryData = [params.country_name, params.flight_id];
+    var queryData = [params.country_name];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);

@@ -13,7 +13,7 @@ exports.getAll = function(callback) {
 };
 
 exports.getById = function(t_email, callback) {
-    var query = 'SELECT * FROM travel_client WHERE email = ?';
+    var query = 'SELECT * FROM travel_client WHERE t_email = ?';
     var queryData = [t_email];
 
     connection.query(query, queryData, function(err, result) {
