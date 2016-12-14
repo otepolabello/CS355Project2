@@ -8,7 +8,7 @@
 
 <br />
 
-<table border="1">
+<table border="6">
     <tr><th>Email</th><th>Agency Name</th><th>Address</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
@@ -16,7 +16,9 @@
         <td><%= result[i].agency_name%>
         <td><%= result[i].address%>
 
-        <td><form action="/travel/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/travel/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <form action="/travel/delete/" style="display:inline;">
                 <input type="hidden" name="email" id="email" value="<%= result[i].email %>" />
                 <input type="submit" value="Delete"/>
             </form>

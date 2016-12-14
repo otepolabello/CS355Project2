@@ -43,3 +43,35 @@ exports.delete = function(country_name, callback) {
     });
 
 };
+
+exports.update = function(params, callback) {
+    var query = 'UPDATE trip SET country_name = ?, country_id = ? WHERE trip_number = ?';
+    var queryData = [params.country_name, params.country_id, params.trip_number];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};
+
+/*  Stored procedure used in this example
+ DROP PROCEDURE IF EXISTS school_getinfo;
+ DELIMITER //
+ CREATE PROCEDURE school_getinfo (school_id int)
+ BEGIN
+ SELECT * FROM school WHERE school_id = school_id;
+ SELECT a.*, school_id FROM address a
+ LEFT JOIN school s on s.address_id = a.address_id;
+ END //
+ DELIMITER ;
+ # Call the Stored Procedure
+ CALL school_getinfo (4);
+ */
+
+exports.edit = function(country_name, callback) {
+    var query = 'CALL travel_getinfo(?)';
+    var queryData = [country_name];
+
+    connection.query(query, queryData, function(err, result) {
+        callback(err, result);
+    });
+};

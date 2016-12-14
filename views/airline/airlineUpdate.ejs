@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Update <%= airline.airline_name%></title>
+</head>
+<body>
+<h1>Update <%= airline.airline_name%></h1>
+<form action="/airline/update" method="get">
+    <input type="hidden" id="email" name="airline_name" value="<%= airline.airline_name %>">
+    Airline Name: <input id="airline_name" name="airline_name" type="text" value="<%= airline.airline_name%>"/>
+    <br />
+    <br />
+        <option value="<%= address[i].address_id %>" <%= selected %>><%= address[i].street + ', ' + address[i].zip_code %></option>
+        <% } %>
+    </select>
+
+
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

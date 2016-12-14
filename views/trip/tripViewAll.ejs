@@ -8,14 +8,16 @@
 
 <br />
 
-<table border="1">
+<table border="6">
     <tr><th>Country Name</th><th>Country ID</th><th>Trip Number</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
         <td><a href="/trip/?country_name=<%= result[i].country_name%>"><%= result[i].country_name%></a></td>
         <td><%= result[i].country_id%><td><%= result[i].trip_number%>
 
-        <td><form action="/trip/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/trip/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <form action="/trip/delete/">
                 <input type="hidden" name="country_name" id="country_name" value="<%= result[i].country_name %>" />
                 <input type="submit" value="Delete"/>
             </form>

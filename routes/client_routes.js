@@ -75,6 +75,39 @@ router.get('/insert', function(req, res){
     }
 });
 
+router.get('/edit2', function(req, res){
+    if(req.query.email == null) {
+        res.send('An email is required');
+    }
+    else {
+        client_dal.edit(req.query.email, function(err, result){
+            res.render('client/clientUpdate', {client: result[0][0]});
+        });
+    }
+
+});
+
+// router.get('/edit2', function(req, res){
+//     if(req.query.email == null) {
+//         res.send('An email is required');
+//     }
+//     else {
+//         client_dal.getById(req.query.email, function(err, travel){
+//             address_dal.getAll(function(err, address) {
+//                 res.render('travel/travelUpdate', {school: travel[0], address: address});
+//             });
+//         });
+//     }
+// /
+// });
+
+router.get('/update', function(req, res){
+    client_dal.update(req.query, function(err, result){
+        res.redirect(302, '/client/all');
+    });
+});
+
+
 // Delete a account for the given email
 router.get('/delete', function(req, res){
     if(req.query.email == null) {

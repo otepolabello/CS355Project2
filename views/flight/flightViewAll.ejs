@@ -8,7 +8,7 @@
 
 <br />
 
-<table border="1">
+<table border="6">
     <tr><th>Arrival City</th><th>Departure City</th><th>Price</th><th>Departure Time</th><th>Arrival Time</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
@@ -18,7 +18,9 @@
         <td><%= result[i].arrival_time%>
         <td><%= result[i].departure_time%>
 
-        <td><form action="/flight/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/flight/edit2/?arrival_city=<%= result[i].arrival_city %>'">Edit</button>
+            <form action="/flight/delete/">
                 <input type="hidden" name="arrival_city" id="arrival_city" value="<%= result[i].arrival_city %>" />
                 <input type="submit" value="Delete"/>
             </form>

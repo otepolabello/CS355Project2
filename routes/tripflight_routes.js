@@ -70,6 +70,39 @@ router.get('/insert', function(req, res){
     }
 });
 
+router.get('/edit', function(req, res){
+    if(req.query.email == null) {
+        res.send('An email is required');
+    }
+    else {
+        travel_dal.edit(req.query.email, function(err, result){
+            res.render('travel/travelUpdate', {travel: result[0][0], address: result[1]});
+        });
+    }
+
+});
+
+router.get('/edit2', function(req, res){
+    if(req.query.email == null) {
+        res.send('An email is required');
+    }
+    else {
+        travel_dal.getById(req.query.email, function(err, travel){
+            address_dal.getAll(function(err, address) {
+                res.render('travel/travelUpdate', {school: travel[0], address: address});
+            });
+        });
+    }
+
+});
+
+router.get('/update', function(req, res){
+    travel_dal.update(req.query, function(err, result){
+        res.redirect(302, '/travel/all');
+    });
+});
+
+
 // Delete a account for the given email
 router.get('/delete', function(req, res){
     if(req.query.country_name == null) {

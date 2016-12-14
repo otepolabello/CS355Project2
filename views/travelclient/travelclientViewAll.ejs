@@ -8,14 +8,16 @@
 
 <br />
 
-<table border="1">
+<table border="6">
     <tr><th>Travel Agency Email</th><th>Client Email</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
         <td><a href="/travelclient/?t_email=<%= result[i].t_email%>"><%= result[i].t_email%></a></td>
         <td><%= result[i].c_email%>
 
-        <td><form action="/travelclient/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/travelclient/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <form action="/travelclient/delete/">
                 <input type="hidden" name="t_email" id="t_email" value="<%= result[i].t_email %>" />
                 <input type="submit" value="Delete"/>
             </form>

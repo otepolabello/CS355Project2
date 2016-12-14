@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Update <%= flight.arrival_city%></title>
+</head>
+<body>
+<h1>Update <%= flight.arrival_city%></h1>
+<form action="/flight/update" method="get">
+    <input type="hidden" id="email" name="email" value="<%= travel.email %>">
+    Agency Name: <input id="agency_name" name="agency_name" type="text" value="<%= travel.agency_name%>"/>
+    <br />
+    <br />
+    Address
+    <select id="address_id" name="address_id">
+
+
+    </select>
+
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

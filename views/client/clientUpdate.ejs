@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Update <%= client_info.email%></title>
+</head>
+<body>
+<h1>Update <%= client_info.email%></h1>
+<form action="/client_info/update" method="get">
+    <input type="hidden" id="email" name="email" value="<%= client.email %>">
+    Email: <input id="email" name="email" type="text" value="<%= client.email%>"/>
+    <br />
+    <br />
+    Address
+    <select id="address" name="address">
+
+    </select>
+
+    <br />
+
+    <input type="submit" />
+
+</form>
+</body>
+
+</html>

@@ -1,21 +1,23 @@
 <html>
 <head>
-    <title>Airline</title>
+    <title>Payment</title>
 </head>
 <body>
-<h1>Amount</h1>
-<a href="/amount/add">Add New Amount</a> <br />
+<h1>Payment</h1>
+<a href="/amount/add">Add New Payment</a> <br />
 
 <br />
 
-<table border="1">
+<table border="6">
     <tr><th>Payment Type</th><th>Amount</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
         <td><a href="/payment/?payment_type=<%= result[i].payment_type%>"><%= result[i].payment_type%></a></td>
         <td><%= result[i].amount%>
 
-        <td><form action="/payment/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/payment/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <form action="/payment/delete/">
                 <input type="hidden" name="payment_type" id="payment_type" value="<%= result[i].payment_type %>" />
                 <input type="submit" value="Delete"/>
             </form>

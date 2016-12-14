@@ -69,6 +69,40 @@ router.get('/insert', function(req, res){
     }
 });
 
+router.get('/edit2', function(req, res){
+    if(req.query.airline_name == null) {
+        res.send('An airline name is required');
+    }
+    else {
+        airline_dal.edit(req.query.airline_name, function(err, result){
+            res.render('airline/airlineUpdate', {airline: result[0][0]});
+        });
+    }
+
+});
+
+// router.get('/edit2', function(req, res){
+//     if(req.query.airline_name == null) {
+//         res.send('An airline name is required');
+//     }
+//     else {
+//         airline_dal.getById(req.query.airline_name, function(err, airline){
+//             address_dal.getAll(function(err, address) {
+//                 res.render('airline/airlineUpdate', {school: airline[0], address: address});
+//             });
+//         });
+//     }
+//
+// });
+
+router.get('/update', function(req, res){
+    airline_dal.update(req.query, function(err, result){
+        res.redirect(302, '/airline/all');
+    });
+});
+
+
+
 // Delete a account for the given email
 router.get('/delete', function(req, res){
     if(req.query.airline_name == null) {

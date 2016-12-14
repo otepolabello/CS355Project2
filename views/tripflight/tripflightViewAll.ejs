@@ -8,14 +8,16 @@ html>
 
 <br />
 
-<table border="1">
-    <tr><th>Country Name</th><th>Flight ID</th><th>Action</th></tr>
+<table border="6">
+    <tr><th>Country Name</th><th>Flight Number</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
         <td><a href="/tripflight/?country_name=<%= result[i].country_name%>"><%= result[i].country_name%></a></td>
         <td><%= result[i].flight_id%>
 
-        <td><form action="/tripflight/delete/">
+        <td>
+            <button onclick="event.preventDefault();window.location.href='/tripflight/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <form action="/tripflight/delete/">
                 <input type="hidden" name="country_name" id="country_name" value="<%= result[i].country_name %>" />
                 <input type="submit" value="Delete"/>
             </form>
