@@ -46,7 +46,7 @@ exports.delete = function(email, callback) {
 
 exports.update = function(params, callback) {
     var query = 'UPDATE client_info SET email = ?, first_name = ?, last_name = ?, address = ? WHERE email = ?';
-    var queryData = [params.first_name, params.last_name, params.address_id, params.email];
+    var queryData = [params.first_name, params.last_name, params.address, params.email];
 
     connection.query(query, queryData, function(err, result) {
         callback(err, result);
@@ -68,7 +68,8 @@ exports.update = function(params, callback) {
  */
 
 exports.edit = function(email, callback) {
-    var query = 'CALL client_info_getinfo(?)';
+    var query = 'CALL client_info(?)';
+    // var query = 'CALL client_info(4)';
     var queryData = [email];
 
     connection.query(query, queryData, function(err, result) {

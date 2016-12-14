@@ -81,7 +81,8 @@ router.get('/edit2', function(req, res){
     }
     else {
         client_dal.edit(req.query.email, function(err, result){
-            res.render('client/clientUpdate', {client: result[0][0]});
+            // res.render('client/clientUpdate', {client: result[0][0]});
+            res.render('client/clientUpdate', {client: result[0]});
         });
     }
 

@@ -78,9 +78,9 @@ router.get('/insert', function(req, res){
     }
 });
 
-router.get('/edit', function(req, res){
+router.get('/edit2', function(req, res){
     if(req.query.arrival_city == null) {
-        res.send('An email is required');
+        res.send('An arrival city is required');
     }
     else {
         flight_dal.edit(req.query.arrival_city, function(err, result){

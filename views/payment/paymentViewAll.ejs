@@ -16,7 +16,7 @@
         <td><%= result[i].amount%>
 
         <td>
-            <button onclick="event.preventDefault();window.location.href='/payment/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <button onclick="event.preventDefault();window.location.href='/payment/edit2/?payment_type=<%= result[i].payment_type %>'">Edit</button>
             <form action="/payment/delete/">
                 <input type="hidden" name="payment_type" id="payment_type" value="<%= result[i].payment_type %>" />
                 <input type="submit" value="Delete"/>

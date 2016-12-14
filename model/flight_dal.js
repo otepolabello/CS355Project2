@@ -68,7 +68,7 @@ exports.update = function(params, callback) {
  */
 
 exports.edit = function(arrival_city, callback) {
-    var query = 'CALL flight_getinfo(?)';
+    var query = 'CALL flight(?)';
     var queryData = [arrival_city];
 
     connection.query(query, queryData, function(err, result) {

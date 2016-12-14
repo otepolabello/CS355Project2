@@ -16,7 +16,7 @@ html>
         <td><%= result[i].flight_id%>
 
         <td>
-            <button onclick="event.preventDefault();window.location.href='/tripflight/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <button onclick="event.preventDefault();window.location.href='/tripflight/edit2/?country_name=<%= result[i].country_name %>'">Edit</button>
             <form action="/tripflight/delete/">
                 <input type="hidden" name="country_name" id="country_name" value="<%= result[i].country_name %>" />
                 <input type="submit" value="Delete"/>
