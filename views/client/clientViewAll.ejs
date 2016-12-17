@@ -17,7 +17,7 @@
         <td><%= result[i].address%>
 
         <td>
-            <button onclick="event.preventDefault();window.location.href='/client/edit2/?email=<%= result[i].email %>'">Edit</button>
+            <button onclick="event.preventDefault();window.location.href='/client_info/edit2/?email=<%= result[i].email %>'">Edit</button>
             <form action="/client_info/delete/">
                 <input type="hidden" name="email" id="email" value="<%= result[i].email %>" />
                 <input type="submit" value="Delete"/>

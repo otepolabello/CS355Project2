@@ -1,25 +1,14 @@
 <html>
 <head>
-    <title>Update <%= airline.airline_name%></title>
+    <title>Update <%= travelclient.t_email%></title>
 </head>
 <body>
-<h1>Update <%= travel.agency_name%></h1>
-<form action="/travel/update" method="get">
-    <input type="hidden" id="email" name="email" value="<%= travel.email %>">
-    Agency Name: <input id="agency_name" name="agency_name" type="text" value="<%= travel.agency_name%>"/>
+<h1>Update <%= travelclient.t_email%></h1>
+<form action="/travelclient/update" method="get">
+    <input type="hidden" id="t_email" name="t_email" value="<%= travelclient.t_email %>">
+    Agency Name: <input id="c_email" name="agency_name" type="text" value="<%= travelclient.c_email%>"/>
     <br />
     <br />
-    Address
-    <select id="address_id" name="address_id">
-        <% for(var i=0; address.length > i; i++ ) {
-            var selected = "";
-            if(address[i].address_id == travel.email) {
-                selected = "selected";
-            }
-        %>
-        <option value="<%= address[i].address_id %>" <%= selected %>><%= address[i].street + ', ' + address[i].zip_code %></option>
-        <% } %>
-    </select>
 
     <br />
 

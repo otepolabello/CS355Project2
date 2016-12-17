@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 // var about = require('./routes/about');
+var company = require('./routes/company_routes');
 var travel = require('./routes/travel_routes');
 var client = require('./routes/client_routes');
 var airline = require('./routes/airline_routes');
@@ -35,7 +36,10 @@ app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
+// app.use('/', about);
+// app.use('/', about);
 // app.use('/about', about);
+app.use('/company', company);
 app.use('/travel', travel);
 app.use('/client', client);
 app.use('/airline', airline);

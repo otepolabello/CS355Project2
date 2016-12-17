@@ -12,7 +12,7 @@
     <tr><th>Arrival City</th><th>Departure City</th><th>Price</th><th>Departure Time</th><th>Arrival Time</th><th>Action</th></tr>
     <% for(var i=0; result.length > i; i++ ) { %>
     <tr>
-        <td><a href="/flight/?flight=<%= result[i].arrival_city%>"><%= result[i].arrival_city%></a></td>
+        <td><a href="/flight/?arrival_city=<%= result[i].arrival_city%>"><%= result[i].arrival_city%></a></td>
         <td><%= result[i].departure_city%>
         <td><%= result[i].price%>
         <td><%= result[i].arrival_time%>

@@ -5,15 +5,11 @@
 <body>
 <h1>Update <%= flight.arrival_city%></h1>
 <form action="/flight/update" method="get">
-    <input type="hidden" id="email" name="email" value="<%= travel.email %>">
-    Agency Name: <input id="agency_name" name="agency_name" type="text" value="<%= travel.agency_name%>"/>
+    <input type="hidden" id="arrival_city" name="arrival_city" value="<%= flight.arrival_city %>">
+    Departure City: <input id="flight_id" name="flight_id" type="text" value="<%= flight.flight_id%>"/>
     <br />
     <br />
-    Address
-    <select id="address_id" name="address_id">
-
-
-    </select>
+    Flight ID: <input id="flight_id" name="flight_id" type="text" value=<%="flight.flight_id"%>
 
     <br />
 

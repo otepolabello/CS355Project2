@@ -52,7 +52,7 @@ router.get('/insert', function(req, res){
     if(req.query.t_email == null) {
         res.send('Travel email must be provided.');
     }
-    else if(req.query.agency_name == null) {
+    else if(req.query.c_email == null) {
         res.send('Client email must be selected');
     }
     else {

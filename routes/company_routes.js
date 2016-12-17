@@ -21,7 +21,7 @@ router.get('/all', function(req, res) {
 // View the company for the given id
 router.get('/', function(req, res){
     if(req.query.company_id == null) {
-        res.send('copmany_id is null');
+        res.send('company_id is null');
     }
     else {
         company_dal.getById(req.query.company_id, function(err,result) {

@@ -1,28 +1,89 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Companies</title>
+        <title>About Us</title>
     </head>
     <body>
-        <h1>Companies</h1>
-        <a href="/company/add">Add New Company</a> <br />
+        <h1>About Us</h1>
 
         <br />
 
-        <table border="1">
-            <tr><th>Name</th></tr>
-            <% for(var i=0; result.length > i; i++ ) { %>
-            <tr>
-                <td><a href="/company/?company_id=<%= result[i].company_id %>"><%= result[i].company_name %></a></td>
+        </FONT>
+        <br>
+        <!--<a href=”/public/images/myERD.jpg”> My ER Diagram</a>-->
+        <br/>
 
-                <td><form action="/company/delete/">
-                        <input type="hidden" name="company_id" id="company_id" value="<%= result[i].company_id %>" />
-                        <input type="submit" value="Delete"/>
-                    </form>
-                </td>
 
-            </tr>
-            <% } %>
-        </table>
+        <FONT></FONT>
+        <p align="center"><font color="navy" size="6"><b>
+                Welcome to Travel Masters!
+            </b></font></p>
+
+        <p align="center"><font color="navy" size="3"><b>
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    Who We Are:
+                    <br/>
+                    <br/>
+                    <br/>
+                    We are a low key travel agency website, so low key that we are in fact still fixing some of our bugs in our website,
+                    but don’t let that turn you away!
+                    <br/> We can master any travel plans you have! No trip is too big or too small!
+                    <br/>
+                    <br/>
+                    <br/>
+                    How We Started:
+                    <br/>
+                    <br/>
+                    <br/>
+                    This company was started in 2016 by a college student at Sonoma State University who had a love for traveling.
+                    <br/>
+                    They wondered how many countries they could visit in a one month period and wanted to challenge themselves to take on
+                    <br/>
+                    the adventure. They got caught up with their programming and database classes that they couldn’t plan their trip, so
+                    <br/>
+                    they sought out a travel agent who could check off all the requirements on their list, but sadly they could not, so
+                    <br/>
+                    they decided to start their own travel agency company and help other people travel the world just like they wanted to.
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    Contact Us:
+                    <br/>
+<br/><br/>
+                    Travel Masters
+<br/>
+                    <br/>
+                    (345) 678-9012
+                    <br/>
+                    masters@travelmasters.com
+
+                    <br/>
+                    <br/>
+                    or feel free to drop by our office at:
+                    <br/>
+<br/>
+                    123 San Francisco St
+
+                    <br/>
+                    San Francisco, Ca 67890
+                    <br/>
+                </b></font></p>
+        <br/>
+
+        <div class="picture"></div>
+        <img src="/public/images/ERD.png"/></img>
+<br/>
+        <br/>
+        <a href="/Users/TobiBello/Desktop/CS355Project2/public/images/myERD.jpg"> Travel Agency ER Diagram</a>
+        <br/>
+        <a href="/public/images/myRS.jpg"> Travel Agency Relational Schema</a>
+
     </body>
 
 </html>
